@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-black h-screen text-white flex items-center justify-center">
+    <div class="Container border-2 max-w-lg w-[500px]">
+      <div class="Input-Container flex">
+        <input
+          type="text"
+          class="px-2 py-4 border-2 rounded-sm shadow-lg flex-1 text-black text-lg"
+          readonly
+          id="passwordText"
+          value="randomePassword"
+        />
+        <button
+          class="px-2 py-4 border-2 rounded-sm shadow-lg bg-green-500 hover:bg-green-400 font-semibold"
+          id="generateBtn"
+        >
+          Generate Password
+        </button>
+      </div>
+      <div class="Filters w-full flex flex-col">
+        <label class="flex gap-5">
+          Length Of Password:
+          <input
+            type="range"
+            min="8"
+            max="20"
+            class="custom-range py-1 text-indigo-600"
+            value="8"
+          />
+          <span id="rangeValue">8</span>
+        </label>
+        <label class="flex gap-5">
+          include Charachters: <input type="checkbox" />
+        </label>
+        <label class="flex gap-5">
+          include Numbers: <input type="checkbox" />
+        </label>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
