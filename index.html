@@ -4,47 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
-
-  <body class="bg-black h-screen text-white flex items-center justify-center">
-    <div class="Container border-2 max-w-lg w-[500px]">
-      <div class="Input-Container flex">
+  <body
+    class="bg-gradient-to-r from-gray-900 to-gray-800 min-h-screen flex items-center justify-center"
+  >
+    <div
+      class="Main-Container mx-auto p-8 bg-gray-700 rounded-lg shadow-lg text-white text-center"
+    >
+      <h1
+        class="text-2xl md:text-3xl font-bold md:font-semibold text-red-500 mb-6"
+      >
+        Password Generator
+      </h1>
+      <div class="input-container flex flex-col items-center space-y-4">
         <input
           type="text"
-          class="px-2 py-4 border-2 rounded-sm shadow-lg flex-1 text-black text-lg"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-md text-gray-700 text-lg font-medium"
           readonly
           id="passwordText"
-          value="randomePassword"
+          value="Random Password"
         />
         <button
-          class="px-2 py-4 border-2 rounded-sm shadow-lg bg-green-500 hover:bg-green-400 font-semibold"
+          class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition duration-300"
           id="generateBtn"
         >
           Generate Password
         </button>
       </div>
-      <div class="Filters w-full flex flex-col">
-        <label class="flex gap-5">
-          Length Of Password:
+      <div class="filters mt-8 text-lg text-red-600">
+        <h2 class="text-xl font-semibold mb-3">Password Options</h2>
+        <div class="mb-3">
+          <label for="passwordLength" class="block mb-1 text-white"
+            >Length Of Password:</label
+          >
           <input
             type="range"
             min="8"
             max="20"
-            class="custom-range py-1 text-indigo-600"
+            class="w-full cursor-pointer"
             value="8"
+            id="passwordLength"
           />
-          <span id="rangeValue">8</span>
-        </label>
-        <label class="flex gap-5">
-          include Charachters: <input type="checkbox" />
-        </label>
-        <label class="flex gap-5">
-          include Numbers: <input type="checkbox" />
-        </label>
+          <span id="rangeValue" class="text-blue-500 font-bold text-2xl"
+            >8</span
+          >
+        </div>
+        <hr class="border-4" />
+        <div
+          class="comming-soon font-semibold text-2xl mb-5 border-2 border-gray-300 p-4"
+        >
+          Features Comming Soon:
+        </div>
+        <div class="mb-3">
+          <label for="includeChars" class="inline-block mr-2 text-white"
+            >Include Characters:</label
+          >
+          <input type="checkbox" id="includeChars" />
+        </div>
+        <div>
+          <label for="includeNumbers" class="inline-block mr-2 text-white"
+            >Include Numbers:</label
+          >
+          <input type="checkbox" id="includeNumbers" />
+        </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
